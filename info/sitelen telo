@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sona pona</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <style>
+        @font-face {
+            font-family: sitelenTelo;
+            src: url(./sitelen_telo_1.01.otf);
+        }
+        @font-face {
+            font-family: sitelenPona;
+            src: url(./sitelenselikiwenjuniko.ttf);
+        }
+        body {
+            background-image: url("https://i.imgur.com/gUoOUc3.png");
+            background-color: black;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .pona{
+            font-family: sitelenPona;
+            font-weight: bold;
+            color:white;
+        }
+        .telo{
+            font-family: sitelenTelo;
+            color:white;
+        }
+        a{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="telo">
+        <div style="font-size: 300%;">
+            lipu [KUPALI]
+        </div>
+        <br>
+        <div style="font-size: 200%;">
+            mi la, nasin open pi lipu Kupali li ken ike lon ilo sona luka. pona la, sina ken weka e nasin luka &lt;<span class="pona">enable swipe gestures</span>&gt;, sina ken open e nasin lipu &lt;<span class="pona">page fit: limit: width</span>&gt;. sina kepeken ilo lili la, ni li pona mute.
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="telo">
+        <div style="font-size: 300%;">
+            pakala
+        </div>
+        <br>
+        <div style="font-size: 200%;">
+            toki mi li ike la, sina pana e sona ona tawa mi kepeken nasin tu: sina ken pali e toki lili lon <a href="https://www.reddit.com/r/tokipona/comments/1bk825j/im_translating_komi_cant_communicate_and_theres/">lipu [WESI] ni</a>, sina ken pali e toki pakala &lt;<span class="pona">issue</span>&gt; lon <a href="https://github.com/janLolen/janlolen.github.io/issues">lipu [KITAPU]</a>.
+        </div>
+    </div>
+</body>
+</html>
