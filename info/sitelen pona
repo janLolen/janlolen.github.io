@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sona pona</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <style>
+        @font-face {
+            font-family: sitelenTelo;
+            src: url(./sitelen_telo_1.01.otf);
+        }
+        @font-face {
+            font-family: sitelenPona;
+            src: url(./sitelenselikiwenjuniko.ttf);
+        }
+        body {
+            background-image: url("https://i.imgur.com/gUoOUc3.png");
+            background-color: black;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .pona{
+            font-family: sitelenPona;
+            font-weight: bold;
+            color:white;
+        }
+        .telo{
+            font-family: sitelenTelo;
+            color:white;
+        }
+        a{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="pona">
+        <div style="font-size: 300%;">
+            󱤪󱦐󱤖󱥰󱥍󱤂󱤧󱤌󱦑
+        </div>
+        <br>
+        <div style="font-size: 200%;">
+            󱤴󱤡󱤿󱥇󱥍󱤪󱦐󱤖󱥰󱥍󱤂󱤧󱤌󱦑󱤧󱤘󱤍󱤬󱤎󱥡󱤭. 󱥔󱤡󱥞󱤘󱥶󱤉󱤿󱤭«enable swipe gestures»󱥞󱤘󱥇󱤉󱤿󱤪«page fit: limit: width». 󱥞󱤙󱤎󱤨󱤡󱥁󱤧󱥔󱤼.
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="pona">
+        <div style="font-size: 300%;">
+            󱥈
+        </div>
+        <br>
+        <div style="font-size: 200%;">
+            󱥬󱤴󱤧󱤍󱤡󱥞󱤘󱥌󱤉󱥡󱥆󱥩󱤴󱤙󱤿󱥮: 󱥞󱤘󱥉󱤉󱥬󱤨󱤬<a href="https://www.reddit.com/r/tokipona/comments/1bk825j/im_translating_komi_cant_communicate_and_theres/">󱤪󱦐󱥷󱤉󱥙󱤌󱦑󱥁</a>󱥞󱤘󱥉󱤉󱥬󱥈«issue»󱤬<a href="https://github.com/janLolen/janlolen.github.io/issues">󱤪󱦐󱤖󱤌󱥬󱤂󱥍󱥰󱦑</a>.
+        </div>
+    </div>
+</body>
+</html>
