@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>info</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <style>
+        @font-face {
+            font-family: sitelenTelo;
+            src: url(./sitelen_telo_1.01.otf);
+        }
+        @font-face {
+            font-family: sitelenPona;
+            src: url(./sitelenselikiwenjuniko.ttf);
+        }
+        body {
+            background-image: url("https://i.imgur.com/gUoOUc3.png");
+            background-color: black;
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .pona{
+            font-family: sitelenPona;
+            font-weight: bold;
+            color:white;
+        }
+        .telo{
+            font-family: sitelenTelo;
+        }
+        a{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="pona">
+        <div style="font-size: 300%;">
+            Cubari
+        </div>
+        <br>
+        <div style="font-size: 200%;">
+            In my experience, the default settings on Cubari can make it harder to navigate on mobile. I recommend disabling swipe gestures and using the "limit: width" option for page fit, especially on small screens.
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="pona">
+        <div style="font-size: 300%;">
+            Mistakes
+        </div>
+        <br>
+        <div style="font-size: 200%;">
+            If there are any mistakes, you can write a comment on <a href="https://www.reddit.com/r/tokipona/comments/1bk825j/im_translating_komi_cant_communicate_and_theres/">this Reddit post</a> or open an issue on <a href="https://github.com/janLolen/janlolen.github.io/issues">GitHub</a>.
+        </div>
+    </div>
+</body>
+</html>
