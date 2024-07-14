@@ -11,19 +11,66 @@
             src: url(./Font/FairfaxHD.ttf);
         }
         body {
-            background-color: black;
+            background-color: #303030;
             color: white;
             background-position: top;
             background-repeat: no-repeat;
             background-size: 100%;
             font-family: Fairfax;
+            font-size: large;
+        }
+        .sewi {
+            font-size: xx-large;
+        }
+        .meso {
+            display: flex;
+            vertical-align: middle;
+            box-sizing: border-box;
+            height: fit-content;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .wide {
+            vertical-align: middle;
+            float: left;
+            height: fit-content;
+            box-sizing: border-box;
+            text-align: center;
+            width: 33.333333333%;
+            background-color: wheat;
+            color: blueviolet;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <p>toki a. lipu ni li awen kama ante.</p>
-    <p>sina alasa lukin e lipu Komi la, <a href="/janKomi/">o pilin e nimi ni</a>.</p>
-    <p>nasin sitelen ni li sitelen <a href="https://www.kreativekorp.com/software/fonts/fairfaxhd/">Fairfax HD</a></p>
-    <p><a href="davidar.github.io/tp/">tomo pi sitelen pona</a> li lipu pi pona mute la o lukin e ona</p>
+    <div>
+        <center>
+            <div class="sewi">
+                <p>kama pona tawa lipu ni</p>
+            </div>
+        </center>
+        <p>toki a. lipu ni li awen kama ante.</p>
+        <p>sina alasa lukin e lipu Komi la, <a href="/janKomi/">o pilin e nimi ni</a>.</p>
+        <p>nasin sitelen ni li sitelen <a href="https://www.kreativekorp.com/software/fonts/fairfaxhd/">Fairfax HD</a></p>
+        <p><a href="davidar.github.io/tp/">tomo pi sitelen pona</a> li lipu pi pona mute la o lukin e ona</p>
+    </div>
+    <div class="meso">
+        <span class="wide">
+            toki
+            <br>
+            toki
+        </span>
+        <span class="wide">
+            aaaaa
+        </span>
+        <span class="wide">
+            mi
+            <br>
+            wile
+            <br>
+            toki
+        </span>
+    </div>
 </body>
 </html>
