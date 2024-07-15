@@ -19,58 +19,125 @@
             font-family: Fairfax;
             font-size: large;
         }
-        .sewi {
-            font-size: xx-large;
+        main {
+            display: block;
+            box-sizing: inherit;
+            line-height: 1.25;
+            font-size: 125%;
+
         }
-        .meso {
+        .pokiLeko {
+            display: block;
+            box-sizing: inherit;
+            line-height: 1.25;
+            font-size: 125%;
+        }
+        .seloPiKulupuLeko {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding-left: 1em;
+            padding-right: 1em;
+            box-sizing: inherit;
+            line-height: 1.25;
+            font-size: 125%;
+        }
+        .supaPiKulupuLeko {
+            box-sizing: inherit;
+            line-height: 1.25;
+            font-size: 125%;
+        }
+        .kulupuLeko {
+            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 2em;
+            box-sizing: inherit;
+            line-height: 1.25;
+            font-size: 125%;
+            align-items: center;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .wanLeko {
+            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 2em;
+            box-sizing: inherit;
+            line-height: 1.25;
+            font-size: 125%;
+            align-items: center;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .lekoWan {
+            height: 100%;
+            color: black;
             display: flex;
-            vertical-align: middle;
-            box-sizing: border-box;
-            height: fit-content;
+            flex-direction: column;
+            padding-bottom: 0;
+            border-radius: 2px;
+            overflow: hidden;
+            background-color: #fafafa;
+            transition: all 0.4s ease;
+            box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+            clear: both;
+            position: relative;
+            align-items: center;
             text-align: center;
-            background-color: aquamarine;
+            box-sizing: inherit;
+            line-height: 1.5;
+            font-size: 70%;
+            text-decoration: none;
         }
-        .wide {
-            vertical-align: middle;
-            float: left;
-            height: fit-content;
-            box-sizing: border-box;
-            text-align: center;
-            width: 333px;
-            background-color: wheat;
-            color: blueviolet;
-            padding: 10px;
+        .sitelen {
+            order: -1;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            max-width: 100%;
+            height: auto;
+            border-style: none;
+            box-sizing: inherit;
+        }
+        .sewi {
+            font-size: 200%;
+        }
+        a {
+            color: inherit;
         }
     </style>
 </head>
 <body>
-    <div>
-        <center>
-            <div class="sewi">
-                <p>kama pona tawa lipu ni</p>
+    <center> <!-- poki ni la nimi suli pi lon sewi -->
+        <div class="sewi">
+            <p>󱤖󱥍󱥩󱤪󱥁</p>
+        </div>
+    </center>
+
+    <div> <!-- poki ni la toki open -->
+        <p>󱤿󱥠󱥁󱤧󱥠<a href="https://www.kreativekorp.com/software/fonts/fairfaxhd/">Fairfax HD</a></p>
+        <p><a href="https://davidar.github.io/tp/">󱥭󱥍󱥠‍󱥔</a>󱤧󱤪󱥍󱥔󱤼󱤡󱥄󱤮󱤉󱥆</p>
+    </div>
+
+    <main> <!-- poki ni la leko pi sona pona -->
+        <div class="pokiLeko">
+            <div class="seloPiKulupuLeko">
+                <div class="supaPiKulupuLeko">
+                    <div class="kulupuLeko">
+                        <a href="/janKomi/">
+                            <div class="lekoWan">
+                                <img src="./sitelenLupa/jan-Komi.png" alt="jan Komi li ken ala toki" class="sitelen">
+                                <br>
+                                󱤑󱦐󱤜󱥅󱥽󱤏󱦑󱤧󱤘󱤂󱥬
+                            </div>
+                        </a>
+                        <div class="lekoWan">
+                            󱤌󱤆󱤧󱤖
+                        </div>
+                    </div>
+                </div>
             </div>
-        </center>
-        <p>toki a. lipu ni li awen kama ante.</p>
-        <p>sina alasa lukin e lipu Komi la, <a href="/janKomi/">o pilin e nimi ni</a>.</p>
-        <p>nasin sitelen ni li sitelen <a href="https://www.kreativekorp.com/software/fonts/fairfaxhd/">Fairfax HD</a></p>
-        <p><a href="https://davidar.github.io/tp/">tomo pi sitelen pona</a> li lipu pi pona mute la o lukin e ona</p>
-    </div>
-    <div class="meso">
-        <span class="wide">
-            toki
-            <br>
-            toki
-        </span>
-        <span class="wide">
-            aaaaa
-        </span>
-        <span class="wide">
-            mi
-            <br>
-            wile
-            <br>
-            toki
-        </span>
-    </div>
+        </div>
+    </main>
 </body>
 </html>
