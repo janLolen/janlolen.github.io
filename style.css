@@ -1,0 +1,128 @@
+@font-face {
+    font-family: Fairfax;
+    src: url(./Font/FairfaxHD.ttf);
+}
+:root{
+    --bg-color: #303030;
+    --bg-highlight-color: #505050;
+    --text-color: #ffffff;
+    --font-default: Fairfax;
+    --pu-color-bg: #e6eff4;
+    --pu-color-bg-dark: #ced7ef;
+    --pu-color-blue: #424c8a;
+    --pu-color-yellow: #fffe70;
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: var(--font-default);
+    line-height: 1.6;
+    font-weight: 400;
+}
+header {
+    box-sizing: border-box;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 400;
+}
+main {
+    padding-top: 3rem;
+    box-sizing: border-box;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 400;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.sewi {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.05);
+    padding-top: .5625rem;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    top: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+.poki-pi-nasin-mute {
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.insa-sewi {
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 1;
+    align-items: center;
+    box-sizing: border-box;
+    line-height: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    right: auto;
+    left: .5rem;
+    text-align: center;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+.poki {
+    max-width: 1320px;
+    width: 100%;
+    padding-right: .75rem;
+    padding-left: .75rem;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+.ijo-meso {
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 3rem;
+}
+.nimi-kipisi {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+}
+.kulupu-leko {
+    left: auto;
+    right: auto;
+    padding-top: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+    box-sizing: border-box;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+.poki-pi-ijo-wan {
+    --margin: 0.75rem;
+    --mute-poki: 3;
+    margin-bottom: 1.5rem;
+    width: calc(max(100%/var(--mute-poki) - 2*var(--margin), 300px));
+    flex: 0 0 auto;
+    margin-right: var(--margin);
+    margin-left: var(--margin);
+    background-color: var(--bg-highlight-color);
+    color: var(--text-color);
+    font-size: 200%;
+    box-shadow: 0 25px 25px 0 rgba(0,0,0,.35);
+}
+.sitelen {
+    max-height: 15rem;
+    width: 100%;
+}
