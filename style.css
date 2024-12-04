@@ -126,6 +126,11 @@ a {
     max-height: 15rem;
     width: 100%;
 }
+.sitelen-lili {
+    max-height: 1.5rem;
+    width: 1.5rem;
+    padding: 0.2rem;
+}
 span.avoidwrap {
     display:inline-block;
 }
