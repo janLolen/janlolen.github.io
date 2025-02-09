@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pippo</title>
+    <style>
+        :root{
+            --bg-color: #303030;
+            --bg-highlight-color: #404040;
+            --text-color: #ffffff;
+            --liNi-color: forestgreen;
+            --liNiAla-color: red;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        .liNi{
+            color: var(--liNi-color);
+            font-weight: bold;
+        }
+        .liNiAla{
+            color: var(--liNiAla-color);
+            font-weight: bold;
+        }
+        .sopra{
+            --margin: 0.75rem;
+            --mute-poki: 2;
+            margin-bottom: 1.5rem;
+            width: calc(max(100%/var(--mute-poki) - 2*var(--margin), 300px)*0.8);
+            flex: 0 0 auto;
+            margin-right: var(--margin);
+            margin-left: var(--margin);
+            background-color: var(--bg-highlight-color);
+            color: var(--text-color);
+            font-size: 200%;
+            box-shadow: 0 25px 25px 0 rgba(0,0,0,.35);
+            border-radius: 50px;
+        }
+        .sotto{
+            --margin: 0.75rem;
+            --mute-poki: 3;
+            margin-bottom: 1.5rem;
+            width: calc(max(100%/var(--mute-poki) - 2*var(--margin), 300px)*0.8);
+            flex: 0 0 auto;
+            margin-right: var(--margin);
+            margin-left: var(--margin);
+            background-color: var(--bg-highlight-color);
+            color: var(--text-color);
+            font-size: 100%;
+            box-shadow: 0 25px 25px 0 rgba(0,0,0,.35);
+            border-radius: 20px;
+        }
+        .gruppo{
+            left: auto;
+            right: auto;
+            padding-top: .5rem;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0;
+            margin-right: 0.75rem;
+            margin-left: 0.75rem;
+            box-sizing: border-box;
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+            width: 99%;
+        }
+        input{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+            border: 0;
+            border-radius: 8px;
+        }
+        button{
+            background-color: var(--bg-highlight-color);
+            color: var(--text-color);
+            text-align: center;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: 0 25px 25px 0 rgba(0,0,0,.35);
+        }
+        .history{
+            font-size: 100%;
+        }
+        .pakala{
+            color: yellow;
+        }
+    </style>
+</head>
+<body onload="getCookie()">
+    <br>
+    <!-- Pippo è ___ ma non è ___ -->
+    <div class="gruppo">
+        <div class="sopra">
+            ilo li <br> <input type="text" id="input1" value="ale">
+        </div>
+        <div class="sopra">
+            li <br> <input type="text" id="input2" value="ala"> <br> ala
+        </div>
+    </div>
+    <!-- Tasto invio -->
+    <div class="gruppo">
+        <button onclick="doThis()">o pana</button>
+    </div>
+    <br>
+    <!-- Risposta -->
+    <div class="gruppo" id="output" style="font-size: 150%;"></div>
+    <!-- Lista di risposte precedenti -->
+    <div class="gruppo" id="frasi"></div>
+    <br><br><br><br>
+    <!-- Parole note -->
+    <div class="gruppo">
+        <div class="sopra history">
+            <span class="liNi">ilo li ni:</span> <br> <span id="è"></span>
+        </div>
+        <div class="sopra history">
+            <span class="liNiAla">li ni ala:</span> <br> <span id="nonè"></span>
+        </div>
+    </div>
+    <script>
+        function isBool(input){
+            return input==true || input==false;
+        }
+        var inputbox1 = document.getElementById("input1")
+        var inputbox2 = document.getElementById("input2")
+        inputbox1.addEventListener("keydown", function (e) {
+            if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+                doThis();
+            }
+        });
+        inputbox2.addEventListener("keydown", function (e) {
+            if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
+                doThis();
+            }
+        });
+        function doThis(){
+            let input1 = inputbox1.value;
+            let input2 = inputbox2.value;
+            let output = document.getElementById("output")
+            let frasi = document.getElementById("frasi")
+            let sentence = "<div class=\"sotto\">" + check(input1, input2) + "</div>";
+            if(!output.innerHTML.match("class=\"pakala\"")) frasi.innerHTML = output.innerHTML + frasi.innerHTML
+            output.innerHTML = sentence;
+            getCookie();
+        }
+        function getCookie(){
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            let est = document.getElementById("è");
+            let nonest = document.getElementById("nonè");
+            est.innerHTML = "";
+            nonest.innerHTML = "";
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                let that = c.split("=")
+                //console.log(that)
+                if(that[1]=="true") est.innerHTML += that[0] + "<br>"
+                if(that[1]=="false") nonest.innerHTML += that[0] + "<br>"
+                if(that[1]=="true" || that[1]=="false") document.cookie = that[0] + "=" + that[1] + ";" + "expires=Fri, 31 Dec 9999 23:59:59 GMT"
+            }
+        }
+        function generate(){
+            let out = "(aa)";
+            for(let i = 'b'.charCodeAt(0); i <= 'z'.charCodeAt(0); i++){
+                out += "|(" + String.fromCharCode(i) + String.fromCharCode(i) + ")";
+            }
+            return out;
+        }
+        function wuwojiti(input){
+            let double = new RegExp("(wu)|(wo)|(ji)|(ti)|(nn)|(nm)|([jwklmpst][jwklmnpst])|([aeiou][aeiou])|([jwklmpst]$)|([^aeioujwklmnpsty])|^y((?!upekosi).)*$|^.+y.*$", 'i');
+            let bad = new RegExp("[^§]", 'g');
+            let work = "" + input;
+            work = work.replace(double, "§");
+            //console.log(work);
+            work = work.replaceAll(bad, "");
+            //console.log(work);
+            if(work != "") return true;
+            return false;
+        }
+        function rule(input){
+            if(pi(input)) return -1;
+            if(wuwojiti(input)) return -2;
+            let consonants = new RegExp("[^aeiou]", 'g');
+            let double = new RegExp("(aa)|(ee)|(ii)|(oo)|(uu)", 'i');
+            let bad = new RegExp("[^§]", 'g');
+            let work = "" + input;
+            work = work.replaceAll(consonants, "");
+            //console.log(work);
+            work = work.replace(double, "§");
+            //console.log(work);
+            work = work.replaceAll(bad, "");
+            //console.log(work);
+            if(work != "") return false;
+            return true;
+        }
+        function pi(input){
+            let double = new RegExp("(pi )", 'i');
+            let bad = new RegExp("[^§]", 'g');
+            let work = "" + input;
+            work = work.replace(double, "§");
+            //console.log(work);
+            work = work.replaceAll(bad, "");
+            //console.log(work);
+            if(work != "") return true;
+            return false;
+        }
+        function frase(liNi, liNiAla){
+            if(rule(liNi)==-1 || rule(liNiAla)==-1) return "<span class=\"pakala\">mi ken ala nanpa e nimi Pi a!</span>";
+            if(rule(liNi)==-2 || rule(liNiAla)==-2) return "<span class=\"pakala\">nimi ni li ike a!</span>";
+            if(rule(liNi)<0 || rule(liNiAla)<0) return "<span class=\"pakala\">pakala li lon a!</span>";
+            if(rule(liNi)){
+            if(rule(liNiAla)){              // 11
+                                            return "<span>ilo li " + "<span class=\"liNi\">" + liNi + "</span></span>" + " <span>li " + "<span class=\"liNi\">" + liNiAla + "</span> kin</span>" + ".";
+            }else{                          // 10
+                                            return "<span>ilo li " + "<span class=\"liNi\">" + liNi + "</span></span>" + " <span>li " + "<span class=\"liNiAla\">" + liNiAla + "</span> ala</span>" + ".";
+            }
+            }else{
+            if(rule(liNiAla)){              // 01
+                                            return "<span>ilo li " + "<span class=\"liNi\">" + liNiAla + "</span></span>" + " <span>li " + "<span class=\"liNiAla\">" + liNi + "</span> ala</span>" + ".";
+            }else{                          // 00
+                                            return "<span>ilo li " + "<span class=\"liNiAla\">" + liNi + "</span> ala</span>" + " <span>li " + "<span class=\"liNiAla\">" + liNiAla + "</span> ala kin</span>" + ".";
+            }
+            }
+        }
+        function check(liNi, liNiAla){
+            if(isBool(rule(liNi)) && isBool(rule(liNiAla))){
+                document.cookie = liNi + "=" + rule(liNi) + ";" + "expires=Fri, 31 Dec 9999 23:59:59 GMT"
+                document.cookie = liNiAla + "=" + rule(liNiAla) + ";" + "expires=Fri, 31 Dec 9999 23:59:59 GMT"
+            }
+            let out = "";
+            out += frase(liNi, liNiAla);
+            return out;
+        }
+    </script>
+</body>
+</html>
