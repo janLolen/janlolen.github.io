@@ -1,5 +1,5 @@
 main {
-    font-size: xx-large;
+    font-size: 150%;
 }
 br {
     display: block;
@@ -10,5 +10,28 @@ a{
 }
 tp {
     color: var(--pu-color-bg-dark);
-    font-style: italic;
+}
+rt {
+    font-size: 45%;
+}
+red {
+    color: pink;
+}
+orn {
+    color: sandybrown;
+}
+yel {
+    color: var(--pu-color-yellow);
+}
+grn {
+    color: lightgreen;
+}
+blu {
+    color: lightskyblue;
+}
+ind {
+    color: mediumslateblue;
+}
+pur {
+    color: violet;
 }
