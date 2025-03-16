@@ -18,7 +18,7 @@
             height: 100%
         }
         .poki-pi-ijo-wan{
-            font-size: calc(min(3cqw, 200%));
+            font-size: calc((max(100%/var(--mute-poki) - 2*var(--margin), 300px))/10);
             height: auto;
         }
     </style>
@@ -40,7 +40,7 @@
             fetch('https://raw.githubusercontent.com/janLolen/musi-Pota/refs/heads/main/musi%20Pota%20%232/_tokipona%20files%20(UTF-8)/' + filename)
             .then(response => response.text())
             .then((data) => {
-                x.innerHTML += filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%<br>"
+                x.innerHTML += filename.split("_")[0] + ".txt<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%<br>"
                 x.innerHTML += "<div class=\"progressOut\"><div class=\"progressIn\" style=\"width: " + (data.match(done).length)*100/(data.match(all).length) + "%;\"></div></div><br>"
                 //x.innerHTML += "<p>" + filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%</p>"
             })
