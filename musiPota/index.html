@@ -18,6 +18,7 @@
             height: 100%
         }
         .poki-pi-ijo-wan{
+            font-size: calc(min(3cqw, 200%));
             height: auto;
         }
     </style>
@@ -33,25 +34,7 @@
         </div>
     </div>
     <script>
-        function counterSubtitles(filename){
-            // percentage is a <p> that will contain the percentage
-            // filename is the name of the file that's being tracked
-            const done = /"<clr:[0-9]+,[0-9]+,[0-9]+>[aeioujwklmnpst][aeioujwklmnpstAEIOUJWKLMNPST ]+: [aeioujwklmnpst'\[][aeioujwklmnpstchAEIOUJWKLMNPST\.,!?;:\-\[\]' ]+"/g
-            const all = /"<clr:[0-9]+,[0-9]+,[0-9]+>[^:]*: .*"/g
-            let x = document.getElementById(filename)
-            if(x==null) return
-            fetch('https://raw.githubusercontent.com/janLolen/musi-Pota/refs/heads/main/musi%20Pota%20%232/_tokipona%20files%20(UTF-8)/' + filename)
-            .then(response => response.text())
-            .then((data) => {
-                x.innerHTML += filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%<br>"
-                x.innerHTML += "<div class=\"progressOut\"><div class=\"progressIn\" style=\"width: " + (data.match(done).length)*100/(data.match(all).length) + "%;\"></div></div>"
-            })
-        }
-        function counter(filename){
-            // percentage is a <p> that will contain the percentage
-            // filename is the name of the file that's being tracked
-            const done = /".*"[ 	]+"[aeioujwklmnpst][aeioujwklmnpstAEIOUJWKLMNPST? ]+"\n/g
-            const all = /".*"[ 	]+".*"\n/g
+        function counter(filename, done, all){
             let x = document.getElementById(filename)
             if(x==null) return
             fetch('https://raw.githubusercontent.com/janLolen/musi-Pota/refs/heads/main/musi%20Pota%20%232/_tokipona%20files%20(UTF-8)/' + filename)
@@ -62,11 +45,21 @@
                 //x.innerHTML += "<p>" + filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%</p>"
             })
         }
+        function counterSubtitles(filename){
+            const done = /"<clr:[0-9]+,[0-9]+,[0-9]+>[aeioujwklmnpst][aeioujwklmnpstAEIOUJWKLMNPST ]+: [aeioujwklmnpst'\[][aeioujwklmnpstchAEIOUJWKLMNPST\.,!?;:\-\[\]' ]+"/g
+            const all = /"<clr:[0-9]+,[0-9]+,[0-9]+>[^:]*: .*"/g
+            counter(filename, done, all)
+        }
+        function counterNormal(filename){
+            const done = /".*"[ 	]+"[aeioujwklmnpst][aeioujwklmnpstAEIOUJWKLMNPST? ]+"\n/g
+            const all = /".*"[ 	]+".*"\n/g
+            counter(filename, done, all)
+        }
         let x = document.getElementById("ciaox")
         counterSubtitles("subtitles_tokipona.txt")
-        counter("valve_tokipona.txt")
-        counter("portal2_tokipona.txt")
-        counter("basemodui_tokipona.txt")
+        counterNormal("valve_tokipona.txt")
+        counterNormal("portal2_tokipona.txt")
+        counterNormal("basemodui_tokipona.txt")
     </script>
 </body>
 </html>
