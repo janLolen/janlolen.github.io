@@ -13,7 +13,11 @@
             margin-right: auto;
             height: 10%;
         }
-        .progressIn{
+        .progressIn1{
+            background-color: orange;
+            height: 100%
+        }
+        .progressIn2{
             background-color: aqua;
             height: 100%
         }
@@ -55,7 +59,7 @@
                 //console.log(data.match(done))
                 console.log(filename + ": " + data.match(done).length + "/" + data.match(all).length + "=" + (data.match(done).length)*100/(data.match(all).length))
                 x.innerHTML += filename.split("_")[0] + ".txt<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%<br>"
-                x.innerHTML += "<div class=\"progressOut\"><div class=\"progressIn\" style=\"width: " + (data.match(done).length)*100/(data.match(all).length) + "%;\"></div></div><br>"
+                x.innerHTML += "<div class=\"progressOut\"><div class=\"progressIn"+game+"\" style=\"width: " + (data.match(done).length)*100/(data.match(all).length) + "%;\"></div></div><br>"
                 //x.innerHTML += "<p>" + filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%</p>"
             })
         }
