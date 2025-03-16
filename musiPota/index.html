@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen"/>
+    <style>
+        .progressOut{
+            width: 80%;
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            height: 10%;
+        }
+        .progressIn{
+            background-color: aqua;
+            height: 100%
+        }
+        .poki-pi-ijo-wan{
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="poki">
+        <div class="kulupu-leko">
+            <div class="poki-pi-ijo-wan" id="subtitles_tokipona.txt"></div>
+            <div class="poki-pi-ijo-wan" id="valve_tokipona.txt"></div>
+            <div class="poki-pi-ijo-wan" id="portal2_tokipona.txt"></div>
+            <div class="poki-pi-ijo-wan" id="basemodui_tokipona.txt"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function counterSubtitles(filename){
+            // percentage is a <p> that will contain the percentage
+            // filename is the name of the file that's being tracked
+            const done = /"<clr:[0-9]+,[0-9]+,[0-9]+>[aeioujwklmnpst][aeioujwklmnpstAEIOUJWKLMNPST ]+: [aeioujwklmnpst'\[][aeioujwklmnpstchAEIOUJWKLMNPST\.,!?;:\-\[\]' ]+"/g
+            const all = /"<clr:[0-9]+,[0-9]+,[0-9]+>[^:]*: .*"/g
+            let x = document.getElementById(filename)
+            if(x==null) return
+            fetch('https://raw.githubusercontent.com/janLolen/musi-Pota/refs/heads/main/musi%20Pota%20%232/_tokipona%20files%20(UTF-8)/' + filename)
+            .then(response => response.text())
+            .then((data) => {
+                x.innerHTML += filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%<br>"
+                x.innerHTML += "<div class=\"progressOut\"><div class=\"progressIn\" style=\"width: " + (data.match(done).length)*100/(data.match(all).length) + "%;\"></div></div>"
+            })
+        }
+        function counter(filename){
+            // percentage is a <p> that will contain the percentage
+            // filename is the name of the file that's being tracked
+            const done = /".*"[ 	]+"[aeioujwklmnpst][aeioujwklmnpstAEIOUJWKLMNPST? ]+"\n/g
+            const all = /".*"[ 	]+".*"\n/g
+            let x = document.getElementById(filename)
+            if(x==null) return
+            fetch('https://raw.githubusercontent.com/janLolen/musi-Pota/refs/heads/main/musi%20Pota%20%232/_tokipona%20files%20(UTF-8)/' + filename)
+            .then(response => response.text())
+            .then((data) => {
+                x.innerHTML += filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%<br>"
+                x.innerHTML += "<div class=\"progressOut\"><div class=\"progressIn\" style=\"width: " + (data.match(done).length)*100/(data.match(all).length) + "%;\"></div></div><br>"
+                //x.innerHTML += "<p>" + filename + "<br>" + Math.floor((data.match(done).length)*100/(data.match(all).length)*100)/100 + "%</p>"
+            })
+        }
+        let x = document.getElementById("ciaox")
+        counterSubtitles("subtitles_tokipona.txt")
+        counter("valve_tokipona.txt")
+        counter("portal2_tokipona.txt")
+        counter("basemodui_tokipona.txt")
+    </script>
+</body>
+</html>
