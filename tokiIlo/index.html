@@ -80,6 +80,7 @@
     </div>
     <select name="default" id="default" onclick="selectScript()">
         <option value="none">-- 󱥄󱤮󱤉󱤘󱥍󱤎󱥁 --</option>
+        <option value="example">-  󱥄󱤮󱤉󱥂󱤎󱤼</option>
         <option value="countdown">- 󱥄󱥇󱥧󱥣󱤭‍󱤭‍󱤭‍󱥮‍󱥳󱥄󱥩󱥣󱤂</option>
         <option value="fibonacci">- 󱥄󱥠󱤉󱤟󱤽󱥍󱤑󱦐󱥔󱤎󱥔󱥇󱤽󱤇󱥣󱤎󱦑</option>
     </select>
@@ -97,11 +98,15 @@
                 case "none":
                     code.value = "";
                     break;
+                case "example":
+                    code.value = "󱥬󱤑󱤡comment\n// also a comment\n󱥄󱥠󱤉󱥬󿬂󱥬󱤀 // print string\n󱥓󱦐󱤽󱦑󱤧󱤬 // variable declaration\n󱥓󱦐󱤆󱦑󱤧󱤬󱤧󱥣󱥮󱥳 // variable declaration and assignment\n󱥄󱥠󱤉󱥓󱦐󱤆󱦑 // print variable\n󱤟󱥓󱦐󱤟󱦑󱤧󱤬󱤧󱤓 // array with assignment\n󱤉󱥣󱥳\n󱤉󱥣󱥮\n󱤉󱥣󱥮󱥳\n󱤉󱤌󱤆󱤂\n󱥄󱥠󱤉󱥓󱤽󱦐󱥳󱦑󱥍󱤟󱥓󱦐󱤟󱦑 // print array at index\n󱥄󱥠󱤉󱤟󱥓󱦐󱤟󱦑 // print whole array\n󱥄󱥌󱤉󱥣󱥳󱥩󱥓󱦐󱤆󱦑 // increment\n    󱥄󱥠󱤉󱥓󱦐󱤆󱦑\n󱥄󱥶󱤉󱥣󱥮󱥧󱥓󱦐󱤆󱦑 // decrement\n    󱥄󱥠󱤉󱥓󱦐󱤆󱦑\n󱥓󱦐󱤆󱦑󱤧󱥣󱥮󱤡 // skips next line if it's false\n    󱥄󱥠󱤉󱥬󿬂󱥮\n󱥓󱦐󱤆󱦑󱤧󱥣󱥳󱤡\n    󱥄󱥠󱤉󱥬󿬂󱥳\n󱥓󱦐󱤀󱤉󱦑󱤧󱤬󱤧󱥣󱥳\n󱥓󱦐󱤆󱦑󱤧󱤨󱥩󱥓󱦐󱤀󱤉󱦑󱤡\n    󱥄󱥠󱤉󱥬󿬂󱤨\n\n// assignments:\n󱥓󱦐󱤆󱦑󱥄󱥡󱤭‍󱤭‍󱥮‍󱥳\n    󱥄󱥠󱤉󱥓󱦐󱤆󱦑\n󱥓󱦐󱤆󱦑󱥄󱥖󱥓󱦐󱤀󱤉󱦑\n    󱥄󱥠󱤉󱥓󱦐󱤆󱦑\n\n// label:\n󱥄󱥩󱥫󱦐󱤖󱦑\n󱥄󱥠󱤉󱥬󿬂󱥬󱤀\n󱥫󱦐󱤖󱦑󱤡";
+                    break;
                 case "countdown":
                     code.value = "󱥓󱦐󱥳󱦑󱤧󱤬󱤧󱥣󱤭‍󱤭‍󱤭‍󱥮‍󱥳\n󱥫󱦐󱥳󱦑󱤡\n󱥄󱥠󱤉󱥓󱦐󱥳󱦑\n󱥄󱥶󱤉󱥣󱥳󱥧󱥓󱦐󱥳󱦑\n󱥓󱦐󱥳󱦑󱤧󱥣󱤂󱤡\n󱥄󱥩󱥫󱦐󱥮󱦑\n󱥄󱥩󱥫󱦐󱥳󱦑\n󱥫󱦐󱥮󱦑󱤡\n󱥄󱥠󱤉󱥬󿬂󱥉󱤧󱥐"
                     break;
                 case "fibonacci":
                     code.value = "󱥓󱦐󱤼󱥷󱦑󱤧󱤬󱤧󱥣󱤭󱤭󱥮\n\n󱥓󱦐󱤼󱤬󱦑󱤧󱤬󱤧󱥣󱥮\n󱥓󱦐󱤂󱦑󱤧󱤬󱤧󱥣󱤂\n󱥓󱦐󱥳󱦑󱤧󱤬󱤧󱥣󱥳\n󱥓󱦐󱥮󱦑󱤧󱤬\n󱥄󱥠󱤉󱥓󱦐󱤂󱦑\n󱥄󱥠󱤉󱥓󱦐󱥳󱦑\n\n󱥄󱥌󱤉󱥣󱥳󱥩󱥓󱦐󱤼󱥷󱦑\n󱥫󱦐󱥉󱦑󱤡\n    󱥓󱦐󱥮󱦑󱥄󱥣󱤂\n    󱥄󱥌󱤉󱥣󱥍󱥓󱦐󱤂󱦑󱥩󱥓󱦐󱥮󱦑\n    󱥄󱥌󱤉󱥣󱥍󱥓󱦐󱥳󱦑󱥩󱥓󱦐󱥮󱦑\n    󱥄󱥠󱤉󱥓󱦐󱥮󱦑\n    󱥓󱦐󱤂󱦑󱥄󱥖󱥓󱦐󱥳󱦑\n    󱥓󱦐󱥳󱦑󱥄󱥖󱥓󱦐󱥮󱦑\n󱥄󱥌󱤉󱥣󱥳󱥩󱥓󱦐󱤼󱤬󱦑\n󱥓󱦐󱤼󱤬󱦑󱤧󱤨󱥩󱥓󱦐󱤼󱥷󱦑󱤡\n󱥄󱥩󱥫󱦐󱥉󱦑"
+                    break;
             }
             textAreaAdjust(document.getElementById("code"))
         }
